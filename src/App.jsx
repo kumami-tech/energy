@@ -34,7 +34,13 @@ export default class App extends React.Component {
   selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch(true) {
       case (nextQuestionId === 'init'):
-        this.displayNextQuestion(nextQuestionId)
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
+        break;
+      case (/^https:*/.test(nextQuestionId)) :
+        const a = document.createElement('a');
+        a.href = nextQuestionId;
+        a.target = '_blank'
+        a.click();
         break;
       default:        
         const chats = this.state.chats;
@@ -46,7 +52,8 @@ export default class App extends React.Component {
         this.setState({
           chats: chats
         })
-        this.displayNextQuestion(nextQuestionId)
+        
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
         break;
       }
   }
@@ -66,9 +73,19 @@ export default class App extends React.Component {
   render() {
     return (
       <section className="c-section">
-        <div className="c-box">
-          <Chats chats={this.state.chats}/>
-          <AnswersList answers={this.state.answers} select={this.selectAnswer}/>
+        <div className="wrapper">
+          <div className="introduction">
+            <div className="title">
+              今すぐ活力が湧き出るbot
+            </div>
+            <div className="text">
+              あなたの気分に合わせて、おすすめの動画をご紹介します。
+            </div>
+          </div>
+          <div className="c-box">
+            <Chats chats={this.state.chats}/>
+            <AnswersList answers={this.state.answers} select={this.selectAnswer}/>
+          </div>
         </div>
       </section>
     );
