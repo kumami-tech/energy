@@ -2,7 +2,7 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import User from '../assets/img/user.png';
+import User from '../assets/img/user.jpg';
 import Host from '../assets/img/bear.jpg';
 
 const Chat = (props) => {
@@ -10,8 +10,8 @@ const Chat = (props) => {
   const classes = isQuestion ? 'p-chat__row' : 'p-chat__reverse';
 
   return(
-    <ListItem>
-      <ListItemAvatar className={classes}>
+    <ListItem className={classes}>
+      <ListItemAvatar>
         {isQuestion ? (
           <Avatar alt="icon" src={Host} />
         ) : (
