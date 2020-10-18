@@ -24,7 +24,7 @@ const defaultDataset = {
 
   "study": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=NsRTpBaH-UE&t=112s"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=NsRTpBaH-UE&t=112s", videoId: "NsRTpBaH-UE"},
           {content: "一つ前の質問に戻る", nextId: "motivation"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -33,7 +33,7 @@ const defaultDataset = {
 
   "club": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=SMEdsVFMtwo&list=PLRPDHP2MKpnaxE06yrLonLib_G4aGy7jq&index=2"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=SMEdsVFMtwo&list=PLRPDHP2MKpnaxE06yrLonLib_G4aGy7jq&index=2", videoId: "SMEdsVFMtwo"},
           {content: "一つ前の質問に戻る", nextId: "motivation"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -42,7 +42,7 @@ const defaultDataset = {
 
   "job": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=B6jd3YVDo0I"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=B6jd3YVDo0I", videoId: "B6jd3YVDo0I"},
           {content: "一つ前の質問に戻る", nextId: "motivation"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -51,7 +51,7 @@ const defaultDataset = {
 
   "other": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=mJJqbkvtPMM&list=PLRPDHP2MKpnaxE06yrLonLib_G4aGy7jq&index=5&t=38s"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=mJJqbkvtPMM&list=PLRPDHP2MKpnaxE06yrLonLib_G4aGy7jq&index=5&t=38s", videoId: "mJJqbkvtPMM"},
           {content: "一つ前の質問に戻る", nextId: "motivation"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -71,7 +71,7 @@ const defaultDataset = {
   
   "animal": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=2MqjzMeD3Uo"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=2MqjzMeD3Uo", videoId: "2MqjzMeD3Uo"},
           {content: "一つ前の質問に戻る", nextId: "healing"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -80,7 +80,7 @@ const defaultDataset = {
   
   "nature": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=LPOX6Qu3IiQ&t=410s"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=LPOX6Qu3IiQ&t=410s", videoId: "LPOX6Qu3IiQ"},
           {content: "一つ前の質問に戻る", nextId: "healing"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -89,7 +89,7 @@ const defaultDataset = {
   
   "music": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=wn_dhNE1KTY"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=wn_dhNE1KTY", videoId: "wn_dhNE1KTY"},
           {content: "一つ前の質問に戻る", nextId: "healing"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -108,7 +108,7 @@ const defaultDataset = {
 
   "laugh": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=GoLpSJ8Bfpc&list=PLRPDHP2MKpnaxE06yrLonLib_G4aGy7jq&index=10&t=12s"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=GoLpSJ8Bfpc&list=PLRPDHP2MKpnaxE06yrLonLib_G4aGy7jq&index=10&t=12s", videoId: "GoLpSJ8Bfpc"},
           {content: "一つ前の質問に戻る", nextId: "exciting"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -117,7 +117,7 @@ const defaultDataset = {
 
   "high": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=sr--GVIoluU"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=sr--GVIoluU", videoId: "sr--GVIoluU"},
           {content: "一つ前の質問に戻る", nextId: "exciting"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -136,7 +136,7 @@ const defaultDataset = {
 
   "fun": {
       answers: [
-        {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=8T5DqYGHD6g"},
+        {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=8T5DqYGHD6g", videoId: "8T5DqYGHD6g"},
         {content: "一つ前の質問に戻る", nextId: "exercise"},
         {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -145,7 +145,7 @@ const defaultDataset = {
 
   "hard": {
       answers: [
-        {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=UZJOLmMDqu8"},
+        {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=UZJOLmMDqu8", videoId: "UZJOLmMDqu8"},
         {content: "一つ前の質問に戻る", nextId: "exercise"},
         {content: "最初の質問に戻る", nextId: "init"},
       ],
@@ -156,7 +156,7 @@ const defaultDataset = {
 
   "tired": {
       answers: [
-          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=WBcYYC9mEBc"},
+          {content: "動画を見る", nextId: "https://www.youtube.com/watch?v=WBcYYC9mEBc", videoId: "WBcYYC9mEBc"},
           {content: "一つ前の質問に戻る", nextId: "tired"},
           {content: "最初の質問に戻る", nextId: "init"},
       ],

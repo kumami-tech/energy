@@ -11,7 +11,7 @@ export default class Movie extends React.Component {
         open={this.props.open}
         onClose={this.props.handleClose}
       >
-        <ModalVideo channel='youtube' isOpen={this.props.open} videoId='WBcYYC9mEBc' onClose={() => this.setState({open: false})} />
+        <ModalVideo channel='youtube' isOpen={this.props.open} videoId={this.props.videoId} onClose={() => this.setState({open: false})} />
       </Dialog>
     )
   }

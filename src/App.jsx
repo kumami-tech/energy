@@ -19,7 +19,8 @@ export default class App extends React.Component {
       chats: [],
       currentId: "init",
       dataset: defaultDataset,
-      open: false
+      open: false,
+      videoId: ""
     }
     this.selectAnswer = this.selectAnswer.bind(this)
     this.handleClickOpen = this.handleClickOpen.bind(this)
@@ -41,21 +42,27 @@ export default class App extends React.Component {
     })
   }
 
-  selectAnswer = (selectedAnswer, nextQuestionId) => {
+  selectAnswer = (selectedAnswer, nextQuestionId, videoId) => {
     switch(true) {
       case (nextQuestionId === 'init'):
         setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
         break;
-        case (/^https:*/.test(nextQuestionId)) :
-        this.handleClickOpen()
+        
+      case (/^https:*/.test(nextQuestionId)) :
+        this.setState({
+          videoId: videoId
+        })
+        this.handleClickOpen();
         break;
+
       default:
         const chats = this.state.chats;
+
         chats.push({
           text: selectedAnswer,
           type: 'answer'
         })
-    
+
         this.setState({
           chats: chats
         })
@@ -102,7 +109,7 @@ export default class App extends React.Component {
           <div className="c-box">
             <Chats chats={this.state.chats} />
             <AnswersList answers={this.state.answers} select={this.selectAnswer} />
-            <Movie open={this.state.open} handleClose={this.handleClose} />
+            <Movie open={this.state.open} handleClose={this.handleClose} videoId={this.state.videoId} />
           </div>
         </div>
       </section>
