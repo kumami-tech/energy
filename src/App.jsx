@@ -2,6 +2,11 @@ import React from 'react';
 import defaultDataset from './dataset';
 import './assets/styles/style.css';
 import {AnswersList, Chats} from './components/index';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+library.add(faFire);
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -42,7 +47,7 @@ export default class App extends React.Component {
         a.target = '_blank'
         a.click();
         break;
-      default:        
+      default:
         const chats = this.state.chats;
         chats.push({
           text: selectedAnswer,
@@ -76,7 +81,9 @@ export default class App extends React.Component {
         <div className="wrapper">
           <div className="introduction">
             <div className="title">
-              今すぐ活力が湧き出るbot
+              <FontAwesomeIcon icon="fire" />
+                今すぐ活力が湧き出るbot
+              <FontAwesomeIcon icon="fire" />
             </div>
             <div className="text">
               あなたの気分に合わせて、おすすめの動画をご紹介します。

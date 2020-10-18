@@ -2,17 +2,19 @@ import React from 'react'
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+const red = '#EF473B'
+
 const useStyles = makeStyles(() => (
   createStyles({
     "button": {
-      borderColor: '#EF473B',
-      color: '#EF473B',
+      borderColor: red,
+      color: red,
       fontSize: '15px',
       fontWeight: 600,
       marginBottom: '8px',
       borderRadius: '10px',
       "&:hover": {
-        backgroundColor: '#EF473B',
+        backgroundColor: red,
         color: '#fff'
       }
     }
