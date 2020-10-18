@@ -103,7 +103,9 @@ export default class App extends React.Component {
               <FontAwesomeIcon icon="fire" />
             </div>
             <div className="text">
-              あなたの気分に合わせて、おすすめの動画をご紹介します。
+              あなたの気分に合わせて、
+              <br className="br-s"></br>
+              おすすめの動画をご紹介します。
             </div>
           </div>
           <div className="c-box">
