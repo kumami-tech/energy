@@ -1,7 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
+
 import defaultDataset from './dataset';
 import './assets/styles/style.css';
-import {AnswersList, Chats} from './components/index';
+import {AnswersList, Chats, Movie} from './components/index';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -19,6 +22,8 @@ export default class App extends React.Component {
       open: false
     }
     this.selectAnswer = this.selectAnswer.bind(this)
+    this.handleClickOpen = this.handleClickOpen.bind(this)
+    this.handleClose = this.handleClose.bind(this)
   }
 
   displayNextQuestion = (nextQuestionId) => {
@@ -41,11 +46,8 @@ export default class App extends React.Component {
       case (nextQuestionId === 'init'):
         setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
         break;
-      case (/^https:*/.test(nextQuestionId)) :
-        const a = document.createElement('a');
-        a.href = nextQuestionId;
-        a.target = '_blank'
-        a.click();
+        case (/^https:*/.test(nextQuestionId)) :
+        this.handleClickOpen()
         break;
       default:
         const chats = this.state.chats;
@@ -62,6 +64,14 @@ export default class App extends React.Component {
         break;
       }
   }
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
 
   componentDidMount() {
     const initAnswer = "";
@@ -90,11 +100,17 @@ export default class App extends React.Component {
             </div>
           </div>
           <div className="c-box">
-            <Chats chats={this.state.chats}/>
-            <AnswersList answers={this.state.answers} select={this.selectAnswer}/>
+            <Chats chats={this.state.chats} />
+            <AnswersList answers={this.state.answers} select={this.selectAnswer} />
+            <Movie open={this.state.open} handleClose={this.handleClose} />
           </div>
         </div>
       </section>
     );
   }
 }
+
+ReactDOM.render(
+  <App />,
+    document.getElementById('root')
+)

@@ -98,3 +98,21 @@
   letter-spacing: .125rem;
   line-height: 1.7;
 }
+
+.modal-video-movie-wrap {
+  padding: 0 !important;
+}
+
+.modal-video-close-btn {
+  display: none;
+}
+
+.MuiPaper-root {
+  width: 100%;
+  height: 460px;
+}
+
+iframe {
+  width: 100%;
+  height: 460px;
+}
