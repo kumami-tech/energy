@@ -7,6 +7,7 @@ const useStyles = makeStyles(() => (
     "button": {
       borderColor: '#EF473B',
       color: '#EF473B',
+      fontSize: '15px',
       fontWeight: 600,
       marginBottom: '8px',
       borderRadius: '10px',
