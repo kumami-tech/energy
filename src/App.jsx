@@ -51,9 +51,16 @@ export default class App extends React.Component {
       }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const initAnswer = "";
     this.selectAnswer(initAnswer, this.state.currentId)
+  }
+
+  componentDidUpdate() {
+    const scrollArea = document.getElementById("scroll-area")
+    if (scrollArea) {
+      scrollArea.scrollTop = scrollArea.scrollHeight
+    }
   }
 
   render() {
