@@ -1,12 +1,12 @@
-# :fire: 今すぐ活力が湧き出るbot :fire:
+## :fire: 今すぐ活力が湧き出るbot :fire:
 ユーザーの気分に合った、今すぐ活力が湧き出る動画を紹介するチャットボットを制作しました。  
 URL: https://energy-bot-18b0c.web.app/
 
-![スクリーンショット 2020-10-19 9 30 18](https://user-images.githubusercontent.com/67250685/96390280-dfd37d00-11ee-11eb-8e6c-f872c807644d.jpg)
+![スクリーンショット 2020-10-19 9 30 18](https://user-images.githubusercontent.com/67250685/96394531-3d6ec600-11fd-11eb-94ed-197ced2d9a9f.jpg)
 
 <br />
 
-## :notebook: 制作の背景
+## :closed_book: 制作の背景
 **全ての物事の原動力は、人々の心の中にある活力から来ている**と言えるのではないでしょうか。  
 
 全ての人々が大きな活力を持って物事に取り組めば、  
@@ -26,7 +26,7 @@ URL: https://energy-bot-18b0c.web.app/
 
 <br />
 
-## :notebook_with_decorative_cover: アプリを利用するメリット
+## :green_book: アプリを利用するメリット
 
 - ネットさえ繋がればいつでもどこでも活力をチャージできます。
 - 自ら動画を検索する場合と比べて、動画を選ぶ時間と労力をかけなくて済みます。
@@ -34,11 +34,16 @@ URL: https://energy-bot-18b0c.web.app/
 
 <br />
 
-## :green_book: 工夫した点
+## :blue_book: 工夫した点
 
 - ユーザーの様々な状況に合わせて、計12パターンの動画を用意しました。
 - 活力を得るためのノウハウを学べる動画よりも、心に直球で投げかけてくるような動画を厳選しました。
 
+<br />
+
+## :orange_book: 使用技術
+- React
+- Firebase
 
 <br />
 
@@ -50,8 +55,3 @@ URL: https://energy-bot-18b0c.web.app/
 
 ![スクリーンショット 2020-10-19 10 51 06](https://user-images.githubusercontent.com/67250685/96393074-19a98100-11f9-11eb-88de-d168c4c6427c.jpg)
 
-<br />
-
-## :closed_book: 使用技術
-- React.js
-- Firebase
