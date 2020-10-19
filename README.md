@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# :fire: 今すぐ活力が湧き出るbot :fire:
+ユーザーの気分に合った、今すぐ活力が湧き出る動画を紹介するチャットボットを制作しました。  
+URL: https://energy-bot-18b0c.web.app/
 
-## Available Scripts
+![スクリーンショット 2020-10-19 9 30 18](https://user-images.githubusercontent.com/67250685/96390280-dfd37d00-11ee-11eb-8e6c-f872c807644d.jpg)
 
-In the project directory, you can run:
+<br />
 
-### `yarn start`
+## :notebook: 制作の背景
+**全ての物事の原動力は、人々の心の中にある活力から来ている**と言えるのではないでしょうか。  
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+全ての人々が大きな活力を持って物事に取り組めば、  
+個々人の生活の充実度が上がるのはもちろん、社会もより活性化するでしょう。  
+しかし、自分で活力をコントロールすることは簡単ではありません。
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+そこで、
+**「日々何かしらの物事に励んでいる人々の心に、短時間で活力を与えられるサービス」**  
+があればいいなと思い、こちらのアプリを制作しました。
 
-### `yarn test`
+また、私は映像制作会社で働いた経験があるほど映像が好きであり、  
+今まで何度も映像によって心を動かされてきました。
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**「この映像の力を持ってすれば、短時間で人々に活力を与えられるのではないか」**
+と考え、  
+本アプリに動画を取り入れました。
 
-### `yarn build`
+<br />
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :notebook_with_decorative_cover: アプリを利用するメリット
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- ネットさえ繋がればいつでもどこでも活力をチャージできます。
+- 自ら動画を検索する場合と比べて、動画を選ぶ時間と労力をかけなくて済みます。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :green_book: 工夫した点
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ユーザーの様々な状況に合わせて、計12パターンの動画を用意しました。
+- 活力を得るためのノウハウを学べる動画よりも、心に直球で投げかけてくるような動画を厳選しました。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br />
 
-## Learn More
+## :books: 機能一覧
+- チャット機能
+- 自動スクロール
+- 動画ののモーダルウィンドウ表示
+- レスポンシブ対応
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![スクリーンショット 2020-10-19 10 51 06](https://user-images.githubusercontent.com/67250685/96393074-19a98100-11f9-11eb-88de-d168c4c6427c.jpg)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## :closed_book: 使用技術
+- React.js
+- Firebase
