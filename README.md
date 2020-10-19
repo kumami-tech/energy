@@ -2,7 +2,7 @@
 ユーザーの気分に合った、今すぐ活力が湧き出る動画を紹介するチャットボットを制作しました。  
 URL: https://energy-bot-18b0c.web.app/
 
-![スクリーンショット 2020-10-19 9 30 18](https://user-images.githubusercontent.com/67250685/96394531-3d6ec600-11fd-11eb-94ed-197ced2d9a9f.jpg)
+![スクリーンショット 2020-10-19 11 36 14](https://user-images.githubusercontent.com/67250685/96395440-9f302f80-11ff-11eb-86ef-7e4cfb5bdca5.jpg)
 
 <br />
 
