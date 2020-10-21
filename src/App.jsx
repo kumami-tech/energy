@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import ReactDOM from 'react-dom'
 import {db} from './firebase/index'
 
@@ -11,77 +11,68 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faFire);
 
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      answers: [],
-      chats: [],
-      currentId: "init",
-      dataset: {},
-      open: false,
-      videoId: ""
-    }
+const App = () => {
+    const [answers, setAnswers] = useState([]);
+    const [chats, setChats] = useState([]);
+    const [currentId, setCurrentId] = useState(init);
+    const [dataset, setDataset] = useState({});
+    const [open, setOpen] = useState(false);
+    const [videoId, setVideoId] = useState("");
+
     this.selectAnswer = this.selectAnswer.bind(this)
     this.handleClickOpen = this.handleClickOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
-  }
 
-  displayNextQuestion = (nextQuestionId) => {
-    const chats = this.state.chats
-    chats.push({
-      text: this.state.dataset[nextQuestionId].question,
+  const displayNextQuestion = (nextQuestionId, nextDataset) => {
+    addChats({
+      text: nextDataset.question,
       type: 'question'
     })
 
-    this.setState({
-      answers: this.state.dataset[nextQuestionId].answers,
-      type: 'question',
-      chats: chats,
-      currentId: "nextQuestionId"
-    })
+    setAnswers(nextDataset.answers)
+    setCurrentId(nextQuestionId)
   }
 
-  selectAnswer = (selectedAnswer, nextQuestionId, videoId) => {
+  const selectAnswer = (selectedAnswer, nextQuestionId, videoId) => {
     switch(true) {
       case (nextQuestionId === 'init'):
-        setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
+        setTimeout(() => displayNextQuestion(nextQuestionId, dataset[nextQuestionId]), 500);
         break;
         
       case (/^https:*/.test(nextQuestionId)) :
-        this.setState({
+        setState({
           videoId: videoId
         })
-        this.handleClickOpen();
+        handleClickOpen();
         break;
 
       default:
-        const chats = this.state.chats;
-
-        chats.push({
+        addChats({
           text: selectedAnswer,
           type: 'answer'
         })
-
-        this.setState({
-          chats: chats
-        })
         
-        setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
+        setTimeout(() => displayNextQuestion(nextQuestionId, dataset[nextQuestionId]), 500);
         break;
-      }
+    }
   }
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
+  const addChats = (chat) => {
+    setChats(prevChats => {
+      return [...prevChats, chat]
+    })
+  }
+
+  const handleClickOpen = () => {
+    setOpen(true);
   };
 
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+  const handleClose = useCallback(() => {
+    setOpen(false);
+  }, [setOpen]);
 
-  initDataset = (dataset) => {
-    this.setState({dataset: dataset})
+  const initDataset = (dataset) => {
+    setState({dataset: dataset})
   }
 
   componentDidMount() {
@@ -108,34 +99,34 @@ export default class App extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <section className="c-section">
-        <div className="wrapper">
-          <div className="introduction">
-            <div className="title">
-              <FontAwesomeIcon icon="fire" />
-                今すぐ活力が湧き出るbot
-              <FontAwesomeIcon icon="fire" />
-            </div>
-            <div className="text">
-              あなたの気分に合わせて、
-              <br className="br-s"></br>
-              おすすめの動画をご紹介します。
-            </div>
+  return (
+    <section className="c-section">
+      <div className="wrapper">
+        <div className="introduction">
+          <div className="title">
+            <FontAwesomeIcon icon="fire" />
+              今すぐ活力が湧き出るbot
+            <FontAwesomeIcon icon="fire" />
           </div>
-          <div className="c-box">
-            <Chats chats={this.state.chats} />
-            <AnswersList answers={this.state.answers} select={this.selectAnswer} />
-            <Movie open={this.state.open} handleClose={this.handleClose} videoId={this.state.videoId} />
+          <div className="text">
+            あなたの気分に合わせて、
+            <br className="br-s"></br>
+            おすすめの動画をご紹介します。
           </div>
         </div>
-      </section>
-    );
-  }
+        <div className="c-box">
+          <Chats chats={chats} />
+          <AnswersList answers={answers} select={selectAnswer} />
+          <Movie open={open} handleClose={handleClose} videoId={videoId} />
+        </div>
+      </div>
+    </section>
+  );
 }
 
 ReactDOM.render(
   <App />,
     document.getElementById('root')
 )
+
+export default App
