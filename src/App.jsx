@@ -19,10 +19,6 @@ const App = () => {
     const [open, setOpen] = useState(false);
     const [videoId, setVideoId] = useState("");
 
-    this.selectAnswer = this.selectAnswer.bind(this)
-    this.handleClickOpen = this.handleClickOpen.bind(this)
-    this.handleClose = this.handleClose.bind(this)
-
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     addChats({
       text: nextDataset.question,
@@ -35,10 +31,6 @@ const App = () => {
 
   const selectAnswer = (selectedAnswer, nextQuestionId, videoId) => {
     switch(true) {
-      case (nextQuestionId === 'init'):
-        setTimeout(() => displayNextQuestion(nextQuestionId, dataset[nextQuestionId]), 500);
-        break;
-        
       case (/^https:*/.test(nextQuestionId)) :
         setState({
           videoId: videoId
@@ -70,10 +62,6 @@ const App = () => {
   const handleClose = useCallback(() => {
     setOpen(false);
   }, [setOpen]);
-
-  const initDataset = (dataset) => {
-    setState({dataset: dataset})
-  }
 
   useEffect(() => {
     (async() => {
