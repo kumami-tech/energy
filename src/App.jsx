@@ -75,29 +75,29 @@ const App = () => {
     setState({dataset: dataset})
   }
 
-  componentDidMount() {
+  useEffect(() => {
     (async() => {
-      const dataset = this.state.dataset
+      const initDataset = {};
+
       await db.collection('questions').get().then(snapshots => {
         snapshots.forEach(doc => {
           const id =doc.id
           const data = doc.data()
-          dataset[id] = data
+          initDataset[id] = data
         })
       })
 
-      this.initDataset(dataset)
-      const initAnswer = "";
-      this.selectAnswer(initAnswer, this.state.currentId)
+      setDataset(initDataset)
+      displayNextQuestion(currentId, initDataset[currentId])
     })()
-  }
+  }, [])
 
-  componentDidUpdate() {
+  useEffect(() => {
     const scrollArea = document.getElementById("scroll-area")
     if (scrollArea) {
       scrollArea.scrollTop = scrollArea.scrollHeight
     }
-  }
+  })
 
   return (
     <section className="c-section">
