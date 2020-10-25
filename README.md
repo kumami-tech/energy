@@ -43,6 +43,7 @@ URL: https://energy-bot-18b0c.web.app/
 
 ## :orange_book: 使用技術
 - React
+- Material-UI
 - Firebase
 
 <br />
